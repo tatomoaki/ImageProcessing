@@ -1,9 +1,9 @@
 #include "Image.h"
 #include <string>
-#include <fstream>
 #include <sstream>
 #include <memory>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 Image::Image(void) {
@@ -231,7 +231,6 @@ Image Image::operator!(){
 }
 
 Image Image::operator*(int val){
-
    Image temp(*this);
    Image::Iterator beg = temp.begin(), end = temp.end();
    while ( beg != end) { 

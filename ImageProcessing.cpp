@@ -6,7 +6,7 @@
 using namespace std;
 int main(int argc, char* argv[]){
 	if(argc > 5  || argc < 3){
-		cerr << "Exceeded argument bounds" << endl;	
+		cerr << "Exceeded argument bounds, avoid segmentation faults" << endl;	
 	}else { 
 		string image, image_2, outfile;		
 		
@@ -48,12 +48,12 @@ int main(int argc, char* argv[]){
 		else if(string(argv[1]).compare("-t") ==  0){ //threshold
 				image = argv[2];
 				outfile = argv[4];
-				int threshold;
+				int t;
 				std::istringstream iss(argv[3]);
-				iss >> threshold;
+				iss >> t;
 				Image obj(image);
-				//Image thresh = threshold*obj;
-				//thresh.writeImage(oufile);
+				Image thresh = obj*t;
+				thresh.writeImage(outfile);
 				}
 		else {
 				cerr << "Invalid arguments" << endl;

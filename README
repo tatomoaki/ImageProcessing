@@ -1,1 +1,9 @@
+Run make to compile. imageops is executable
+
 ./imageops -i ./<image_name> ./<outfile>
+./imageops -a ./img.pgm ./img_2.pgm ./outfile.pgm
+
+ImageProcessing.cpp - driver class
+Image.h - headerfile (Iterator inner class)
+Image.cpp - member variables and function defintions
+Iterator.cpp - overloaded iterator class
